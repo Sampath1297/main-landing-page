@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Template</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!--- header -->
+    <div class="header">
+        <img src ="images/Screenshot 2025-01-09 115845.png">
+    </div>  
+
+    <!-- Admissions Form -->
+    <div class="banner">
+        <div class="row" id="banner-row">
+            <div class="col-md-8">
+                <h1>Be the Change. Lead the <br> Business World.</h1>
+                <p>Study at a top-ranked business school and revolutionize the <br> way the world does business</p>
+            </div>
+            <div class="col-md-4  mt-4 p-4 ">
+                <div style="margin: 4px;"><h3 class="text-center" style="color:#f1f1f1;">Admissions Open 2025-26</h3></div>
+                <form id="admissions-form">
+                    <div class="mb-3 input-container">
+                        <i class="fa fa-user"></i>
+                        <input type="text" class="form-control" placeholder="Enter Your Full Name" id="full-name" style="border-radius: 0;">
+                        <small class="error" id="name-error" style="color: red; display: none;">Please enter your full name.</small>
+                    </div>
+                    <div class="mb-3 input-container">
+                        <i class="fa fa-envelope"></i>
+                        <input type="email" class="form-control" placeholder="Enter Email ID" id="email" style="border-radius: 0;">
+                        <small class="error" id="email-error" style="color: red; display: none;">Please enter a valid email address.</small>
+                    </div>
+                    <div class="mb-3 input-container">
+                        <i class="fa fa-phone"></i>
+                        <input type="tel" class="form-control" placeholder="Enter Mobile Number" id="mobile-number" style="border-radius: 0;">
+                        <small class="error" id="mobile-error" style="color: red; display: none;">Please enter a valid mobile number (10 digits).</small>
+                    </div>
+                    <div style="display: flex;">
+                        <div class="mb-3" style="width:209px; margin-right:15px">
+                            <select class="form-control" id="state" style="border-radius: 0;">
+                                <option value="">Select State</option>
+                                <option>Andhra Pradesh</option>
+                                <option>Arunachal Pradesh</option>
+                                <option>Assam</option>
+                                <option>Bihar</option>
+                                <option>Chhattisgarh</option>
+                                <option>Dadra and Nagar Haveli</option>
+                                <option>Daman and Diu</option>
+                                <option>Delhi</option>
+                                <option>Goa</option>
+                                <option>Gujarat</option>
+                                <option>Haryana</option>
+                                <option>Himachal Pradesh</option>
+                                <option>Jharkhand</option>
+                                <option>Karnataka</option>
+                                <option>Kerala</option>
+                                <option>Lakshadweep</option>
+                                <option>Madhya Pradesh</option>
+                                <option>Maharashtra</option>
+                                <option>Manipur</option>
+                                <option>Meghalaya</option>
+                                <option>Mizoram</option>
+                                <option>Nagaland</option>
+                                <option>Odisha</option>
+                                <option>Pondicherry</option>
+                                <option>Punjab</option>
+                                <option>Rajasthan</option>
+                                <option>Sikkim</option>
+                                <option>Tamil Nadu</option>
+                                <option>Telangana</option>
+                                <option>Tripura</option>
+                                <option>Uttarakhand</option>
+                                <option>Uttar Pradesh</option>
+                                <option>West Bengal</option>
+                            </select>
+                            <small class="error" id="state-error" style="color: red; display: none;">Please select a state.</small>
+                        </div>
+                        <div class="mb-3" style="width:220px;">
+                            <select class="form-control" id="city" style="border-radius: 0;">
+                                <option value="">Select City</option>
+                                <option>Bengaluru</option>
+                                <option>Chennai</option>
+                                <option>Delhi</option>
+                                <option>Hyderabad</option>  
+                                <option>Mumbai</option>
+                                <option>Pune</option>
+                                <option>Nagpur</option>
+                                <option>Kolkata</option>
+                                <option>Ahmedabad</option>
+                                <option>Surat</option>
+                                <option>Vadodara</option>
+                                <option>Rajkot</option>
+                                <option>Vadnagar</option>
+                                <option>Gandhinagar</option>
+                                <option>Jamnagar</option>
+                                <option>Bhavnagar</option>
+                                <option>Anand</option>
+                                <option>Narayanpur</option>
+                                <option>Jalandhar</option>
+                                <option>Puri</option>
+                                <option>Gonda</option>
+                                <option>Bhiwani</option>
+                                <option>Jodhpur</option>
+                                <option>Jammu</option>
+                                <option>Sikkim</option>
+                                <option>Nashik</option>
+                                <option>Raipur</option>
+                                <option>Indore</option>
+                                <option>Ujjain</option>
+                                <option>Bangalore</option>
+                                <option>Mysore</option>
+                            </select>
+                            <small class="error" id="city-error" style="color: red; display: none;">Please select a city.</small>
+                        </div>
+                    </div>
+                    <div class="flex-container" style="display:flex">
+                        <div class="captcha-display">
+                            <p id="captcha-text">Af1CD3</p>
+                        </div> 
+                        
+                        <div class="mb-3" style="width:230px">
+                            <input type="text" class="form-control" placeholder="Captcha Code" id="captcha-code" style="border-radius: 0%;">
+                            <small class="error" id="captcha-error" style="color: red; display: none;">Captcha code is incorrect.</small>
+                        </div>
+
+                    </div>
+                    <!-- <button type="button" id="refresh-captcha" style="margin: 4px;"><img src="https://icons.iconarchive.com/icons/custom-icon-design/flatastic-8/128/Refresh-icon.png" width="40" height="40"> -->
+                    </button>
+                    <div class="form-check mb-3">
+                        <input type="checkbox" class="form-check-input" id="terms">
+                        <label class="form-check-label" for="terms" style="color:#f1f1f1; font-size: 10 px;">I agree to receive information regarding my submitted application by signing up on Alliance University</label>
+                        <small class="error" id="terms-error" style="color: red; display: none;">You must agree to the terms.</small>
+                    </div>
+                    <div class="submit-container" style="margin: 10px;">
+                        <button type="submit" class="btn btn-danger w-50" style="justify-content:center; background-color: #690303; border-color:#690303;border-radius:0px ;">Register Now</button>
+                    </div>
+                </form>
+                
+            </div>
+        </div>
+        <script>
+            function generateCaptcha() {
+                const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+                let captcha = '';
+                for (let i = 0; i < 6; i++) {
+                    captcha += chars.charAt(Math.floor(Math.random() * chars.length));
+                }
+                return captcha;
+            }
+        
+            document.getElementById('refresh-captcha').addEventListener('click', function() {
+                const newCaptcha = generateCaptcha();
+                document.getElementById('captcha-text').textContent = newCaptcha;
+            });
+        
+            document.getElementById('admissions-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+        
+                // Clear previous errors
+                document.querySelectorAll('.error').forEach(el => el.style.display = 'none');
+        
+                let valid = true;
+        
+                // Validate Full Name
+                const fullName = document.getElementById('full-name');
+                if (!fullName.value.trim()) {
+                    document.getElementById('name-error').style.display = 'block';
+                    valid = false;
+                }
+        
+                // Validate Email
+                const email = document.getElementById('email');
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailPattern.test(email.value)) {
+                    document.getElementById('email-error').style.display = 'block';
+                    valid = false;
+                }
+        
+                // Validate Mobile Number
+                const mobileNumber = document.getElementById('mobile-number');
+                const mobilePattern = /^[0-9]{10}$/;
+                if (!mobilePattern.test(mobileNumber.value)) {
+                    document.getElementById('mobile-error').style.display = 'block';
+                    valid = false;
+                }
+        
+                // Validate State
+                const state = document.getElementById('state');
+                if (!state.value) {
+                    document.getElementById('state-error').style.display = 'block';
+                    valid = false;
+                }
+        
+                // Validate City
+                const city = document.getElementById('city');
+                if (!city.value) {
+                    document.getElementById('city-error').style.display = 'block';
+                    valid = false;
+                }
+        
+                // Validate Captcha
+                const captcha = document.getElementById('captcha-code');
+                const displayedCaptcha = document.getElementById('captcha-text').textContent;
+                if (captcha.value !== displayedCaptcha) {
+                    document.getElementById('captcha-error').style.display = 'block';
+                    valid = false;
+                }
+        
+                // Validate Terms
+                const terms = document.getElementById('terms');
+                if (!terms.checked) {
+                    document.getElementById('terms-error').style.display = 'block';
+                    valid = false;
+                }
+        
+                if (valid) {
+                    alert('Form submitted successfully!');
+                    this.submit();
+                }
+            });
+        </script>
+        
+        <style>
+            .error {
+                font-size: 12px;
+                margin-top: 5px;
+            }
+        </style>
+<div class="stats-section">
+    <div class="row" style="justify-content: center; align-items: center; display:flex;text-align:center; padding-left: 10px">
+        <div class="col ">
+            <div class="stat">
+                <h2 class="count" data-count="60">50</h2>
+                <p>Acres of green land</p>
+            </div>
+        </div>
+        <div class="col ">
+            <div class="stat">
+                <h2 class="count" data-count="800">790</h2>
+                <p>The MNC's recruiting partners</p>
+            </div>
+        </div>
+        <div class="col ">
+            <div class="stat">
+                <h2 class="count" data-count="32000">31990</h2>
+                <p>Alumni across the globe</p>
+            </div>
+        </div>
+        <div class="col ">
+            <div class="stat">
+                <h2 class="count" data-count="350">340</h2>
+                <p>Global Faculty with diverse <br>experiences</p>
+            </div>
+        </div>
+        <div class="col ">
+            <div class="stat">
+                <h2 class="count" data-count="80">70</h2>
+                <p>International linkages with <br>universities across 50 countries</p>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+    
+<script>
+$(document).ready(function() {
+    $('.count').each(function() {
+        var $this = $(this),
+            countTo = $this.attr('data-count'),
+            start = parseInt($this.text());
+
+        $({ countNum: start }).animate({
+            countNum: countTo
+        },
+        {
+            duration: 2000,
+            easing: 'linear',
+            step: function() {
+                $this.text(Math.floor(this.countNum) + '+');
+            },
+            complete: function() {
+                $this.text(this.countNum + '+');
+                $this.addClass('falling-effect');
+            }
+        });
+    });
+});
+</script>
+
+<style>
+.falling-effect {
+    animation: fall 2s ease-in-out;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+</style>
+<!---achivements section -->
+<div class="achivements-section" >
+<div class="row">
+<div col-md-12 style="margin: 20px;"> 
+<h1><b> Build Your Future on a Foundation of Legacy </b></h1>
+</div>
+</div>
+
+<div class="row" id="logo-row">
+    <div class="col-md-3 col-sm-6" id="logo">
+        <img src="images/ICABE-LOGO.png">
+        <div class="text-row">
+            <p>Acredited by international Accrediation council<br> for Business Education</p>
+        </div>
+    </div>
+    <div class="col-md-3 col-sm-6" id="logo">
+        <img src="images/AACSB-LOGO.png">
+        <div class="text-row">
+            <p>Members of the Association to Advance <br>Collegate Schools of Business</p>
+        </div>
+    </div>
+    <div class="col-md-3 col-sm-6" id="logo">
+        <img src="images/WORL-UNIVERSITY-LOGO.png">
+        <div class="text-row">
+            <p>Among the Top 1 % University in South Asia by QS <br>World University Ranking</p>
+        </div>
+    </div>
+    <div class="col-md-3 col-sm-6" id="logo">
+        <img src="images/NIRF-LOGO.png">
+        <div class="text-row">
+            <p >Ranked 71st in India by NIRF  <br>Ministry of Education Rankings</p>
+        </div>
+    </div>
+</div>
+</div>
+
+
+<!-- business Goals -->
+<div class="business-goals-section" >
+    
+    
+    <div class="row" id="business-goals-row">
+        <div class="col-md-12" id="business-goals-text">
+            <h1 id="business-goals-section-heading" style="color:#f1f1f1">Setting the Standard in Businesss Education</h1>
+        </div>
+    </div> 
+        <div class="row" id="cards-row">
+            <div class="col-md-3 col-sm-6" id="card-container">
+                <div class="logo-images" id="scholar-images">
+                    <img src="images/scholar-image.png">
+                </div>
+                <div class="card-text">
+                    <h4 id="business-goals-text">Industry-Focused Cirriculum</h4>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6" id="card-container">
+                <div class="logo-images" id="scholar-images">
+                    <img src="images/globe-image.png">
+                </div>
+                <div class="card-text">
+                    <h4 id="business-goals-text">International <br>collabrations and <br>exchange progams</h4>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6" id="card-container">
+                <div class="logo-images" id="scholar-images">
+                    <img src="images/suitcase-man-image.png">
+                </div>
+                <div class="card-text">
+                    <h4 id="business-goals-text">Rewarding carrer oppurtunities</h4>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6" id="card-container">
+                <div class="logo-images" id="scholar-images">
+                    <img src="images/man-bg-board.png">
+                </div>
+                <div class="card-text">
+                    <h4 id="business-goals-text">World-class <br>Faculty</h4>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" id="cards-row">
+            <div class="col-md-3 col-sm-6" id="card-container">
+                <div class="logo-images" id="scholar-images">
+                    <img src="images/building-image.png">
+                </div>
+                <div class="card-text">
+                    <h4 id="business-goals-text">State-of-the-Art Infrastructure</h4>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6" id="card-container">
+                <div class="logo-images" id="scholar-images">
+                    <img src="images/book-image.png">
+                </div>
+                <div class="card-text">
+                    <h4 id="business-goals-text">Innovative Learning Methods</h4>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6" id="card-container">
+                <div class="logo-images" id="scholar-images">
+                    <img src="images/human-puzzle.png">
+                </div>
+                <div class="card-text">
+                    <h4 id="business-goals-text">Comprehensive Skill</h4>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6" id="card-container">
+                <div class="logo-images" id="scholar-images">
+                    <img src="images/medal-image.png">
+                </div>
+                <div class="card-text">
+                    <h4 id="business-goals-text">Rich Legacy of Excellence</h4>
+                </div>
+            </div>
+        </div>
+</div>
+<!--Global Edge Content-->
+<div class="global-edge-section">
+    <div class="row">
+    <div class="col-md-6">
+        <h1 id="global-edge-section-heading">A Global Edge Like <br>No Other</h1>
+        <p>Step into a world of oppurtunities with Alliance Universitiy's exceptional international exchange<br>programs-an advantage few universities can offer. With 80+ global partnerships,we open doors<br> to transformative experiences that prepare you to lead on global stage</p>
+    <div class="logo-info-cards">
+        <div class="img-text-wrapper">
+            <div class="image-global">
+                <img src="images/scholar-icon-global.png">
+            </div>
+            <div class="text-global">
+                <p><b>Semester Exchange</b> <br> Study in Premier institutions abroad</p>
+            </div>
+        </div>
+    </div>
+    <div class="logo-info-cards">
+        <div class="img-text-wrapper">
+            <div class="image-global">
+                <img src="images/bag-icon-global (3).png">
+            </div>
+            <div class="text-global">
+                <p><b>Internship Opportunities</b> <br> Get real-world global experience</p>
+            </div>
+        </div>
+    </div>
+    <div class="logo-info-cards">
+        <div class="img-text-wrapper">
+            <div class="image-global">
+                <img src="images/map-icon-global.png">
+            </div>
+            <div class="text-global">
+                <p><b>Dual Degree</b> <br> Earn Internationally acclaimed credentials</p>
+            </div>
+        </div>
+    </div>
+    <div class="logo-info-cards">
+        <div class="img-text-wrapper">
+            <div class="image-global">
+                <img src="images/hands-icon-global.png">
+            </div>
+            <div class="text-global">
+                <p><b>Pathway Programs</b> <br> Seamlessly transition to global education hubs</p>
+            </div>
+        </div>
+    </div>  
+    </div>
+    <div class="col-md-6 col-sm-12" id="global-edge-section-img-container"style="justify-content:center; padding: 30px; align-items: center; ">
+        <img src="images/alliance-admin-block.jpg">
+    </div>
+</div>
+</div>
+<!--Placements Sectio 1-->
+<div class="placements-opportunities">
+    <div class="row mt-50" >
+        <div class="col-md-12">
+            <h1 style="color:black"><b>Graduate with Confidence - Unmatched <br>Placements Highlights</b></h1>
+        </div>
+    </div>
+    <div class="stats-container">
+        <div class="row">
+        <div class="stat-item">
+                <div class="col">
+            <div class="circle"></div>
+            <div class="text-content">
+                <span>6000+</span>
+                <p>Opportunities Created</p>
+            </div>
+        </div>
+        </div>
+        <div class="stat-item">
+            <div class="col">
+            <div class="circle"></div>
+            <div class="text-content">
+                <span>800+</span>
+                <p>Recruiters</p>
+            </div>
+        </div>
+        </div>
+        
+        <div class="stat-item">
+            <div class="col">
+        <div class="circle"></div>
+            <div class="text-content">
+                <span>52%</span>
+                <p>New Recruiters</p>
+            </div>
+        </div>
+        </div>
+        <div class="stat-item">
+            <div class="col">
+            <div class="circle"></div>
+            <div class="text-content">
+                <span>₹ 38.05</span>
+                <p>Opportunities Created</p>
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
+    
+        <div class="slider-container">
+    
+            <div class="slider">
+                <div class="slider-item"><img src="images/resized-imaes/bRILLO-LOGO.webp" alt="Brillio"></div>
+                <div class="slider-item"><img src="images/resized-imaes/bosch-logo.webp" alt="Bosch"></div>
+                <div class="slider-item"><img src="images/resized-imaes/aDITYA-BIRLA-GROUP-LOGO.webp" alt="Aditya Birla"></div>
+                <div class="slider-item"><img src="images/resized-imaes/TVS-LOGO.webp" alt="TVS"></div>
+                <div class="slider-item"><img src="images/resized-imaes/Tata_Advanced_Systems_Logo.jpg" alt="Tata"></div>
+                <div class="slider-item"><img src="images/resized-imaes/CAFE-COFEE-DAY.webp" alt="Cafe-Cofee-Day"></div>
+                <div class="slider-item"><img src="images/resized-imaes/CBRE-LOGO.webp" alt="cbre"></div>
+                <div class="slider-item"><img src="images/resized-imaes/DELLEOITE-LOGO.webp" alt="DELLOITE"></div>
+                <div class="slider-item"><img src="images/resized-imaes/GENPACT-LOGO.webp" alt="GENPACT"></div>
+                <div class="slider-item"><img src="images/resized-imaes/STELLANTIS-LOGO.webp" alt="SELANTIS"></div>
+                <div class="slider-item"><img src="images/resized-imaes/greenlam.webp" alt="GREENLAM"></div>
+                <div class="slider-item"><img src="images/resized-imaes/bRILLO-LOGO.webp" alt="Brillio"></div>
+                <div class="slider-item"><img src="images/resized-imaes/bosch-logo.webp" alt="Bosch"></div>
+                <div class="slider-item"><img src="images/resized-imaes/aDITYA-BIRLA-GROUP-LOGO.webp" alt="Aditya Birla"></div>
+                <div class="slider-item"><img src="images/resized-imaes/TVS-LOGO.webp" alt="TVS"></div>
+                <div class="slider-item"><img src="images/resized-imaes/Tata_Advanced_Systems_Logo.jpg" alt="Tata"></div>
+                <div class="slider-item"><img src="images/resized-imaes/CAFE-COFEE-DAY.webp" alt="Cafe-Cofee-Day"></div>
+                <div class="slider-item"><img src="images/resized-imaes/CBRE-LOGO.webp" alt="cbre"></div>
+                <div class="slider-item"><img src="images/resized-imaes/DELLEOITE-LOGO.webp" alt="DELLOITE"></div>
+                <div class="slider-item"><img src="images/resized-imaes/GENPACT-LOGO.webp" alt="GENPACT"></div>
+                <div class="slider-item"><img src="images/resized-imaes/STELLANTIS-LOGO.webp" alt="SELANTIS"></div>
+                <div class="slider-item"><img src="images/resized-imaes/greenlam.webp" alt="GREENLAM"></div>
+                <div class="slider-item"><img src="images/resized-imaes/bRILLO-LOGO.webp" alt="Brillio"></div>
+                <div class="slider-item"><img src="images/resized-imaes/bosch-logo.webp" alt="Bosch"></div>
+                <div class="slider-item"><img src="images/resized-imaes/aDITYA-BIRLA-GROUP-LOGO.webp" alt="Aditya Birla"></div>
+                <div class="slider-item"><img src="images/resized-imaes/TVS-LOGO.webp" alt="TVS"></div>
+                <div class="slider-item" style="padding-top: 10px;"><img src="images/resized-imaes/Tata_Advanced_Systems_Logo.jpg" alt="Tata"></div>
+                <div class="slider-item"><img src="images/resized-imaes/CAFE-COFEE-DAY.webp" alt="Cafe-Cofee-Day"></div>
+                <div class="slider-item"><img src="images/resized-imaes/CBRE-LOGO.webp" alt="cbre"></div>
+                <div class="slider-item"><img src="images/resized-imaes/DELLEOITE-LOGO.webp" alt="DELLOITE"></div>
+                <div class="slider-item"><img src="images/resized-imaes/GENPACT-LOGO.webp" alt="GENPACT"></div>
+                <div class="slider-item"><img src="images/resized-imaes/STELLANTIS-LOGO.webp" alt="SELANTIS"></div>
+                <div class="slider-item"><img src="images/resized-imaes/greenlam.webp" alt="GREENLAM"></div>
+                
+            </div>
+        </div>
+        <style>
+        .slider-container {
+            border-top: 2px solid;
+            border-bottom: 2px solid;
+            border-image: linear-gradient(to right, rgb(252, 251, 251), darkred, rgb(245, 240, 240)) 1;
+            border-left:0px;
+            border-right:0px ;
+            overflow: hidden;
+        }
+        .slider {
+            display: flex;
+            transition: transform 0.5s linear;
+        }
+        </style>
+
+
+<script>
+    $(document).ready(function () {
+        const slider = $('.slider');
+        const itemWidth = $('.slider-item').outerWidth(true); // Include margins
+        const itemsCount = $('.slider-item').length;
+        const totalWidth = itemWidth * itemsCount;
+
+        // Duplicate slider items for infinite loop effect
+        slider.append(slider.html());
+
+        function startSliding() {
+            let currentPosition = 0;
+
+            function animateSlide() {
+                currentPosition -= 2; // Move by 2px for animation speed
+                slider.css('transform', `translateX(${currentPosition}px)`);
+
+                // Reset position for seamless loop
+                // if (Math.abs(currentPosition) >= totalWidth) {
+                //     currentPosition = 0; // Reset to the start of duplicated content
+                // }
+
+                requestAnimationFrame(animateSlide);
+            }
+
+            animateSlide();
+        }
+
+        startSliding();
+    });
+</script>
+
+      
+
+        
+    <div class="container">
+        <h1>Recruiters That Set the Bar</h1>
+        <div class="grid-container">
+          <div class="card"><img src="images/company -logos/aditya-birla-group.webp" alt="Aditya Birla Group"></div>
+          <div class="card"><img src="images/company -logos/akmai.webp" alt="Akamai"></div>
+          <div class="card"><img src="images/company -logos/anz-logo.webp" alt="ANZ"></div>
+          <div class="card"><img src="images/company -logos/abc.webp" alt="ABC Consultants"></div>
+          <div class="card"><img src="images/company -logos/ADRESS-MAKER.webp" alt="Address Maker"></div>
+          <div class="card"><img src="images/company -logos/DASSAULT-SYSTEMS.webp" alt="Dassault Systemes"></div>
+          <div class="card"><img src="images/company -logos/FLIPKART.webp" alt="Flipkart"></div>
+          <div class="card"><img src="images/company -logos/HCL.webp" alt="HCL"></div>
+          <div class="card"><img src="images/company -logos/HDFC.webp" alt="HDFC"></div>
+          <div class="card"><img src="images/company -logos/HINDUSTHAN UMLEVER LIMITED.webp" alt="Hindustan Unilever"></div>
+          <div class="card"><img src="images/company -logos/BERGER.webp" alt="Berger Paints"></div>
+          <div class="card"><img src="images/company -logos/BLUE-OCEAN.webp" alt="Blue Ocean Ventures"></div>
+          <div class="card"><img src="images/company -logos/DELLOITE.webp" alt="Deloitte"></div>
+          <div class="card"><img src="images/company -logos/DHL.webp" alt="DHL"></div>
+          <div class="card"><img src="images/company -logos/EY.webp" alt="EY"></div>
+          <div class="card"><img src="images/company -logos/OLA-ELECTRIC.webp" alt="OLA Electric"></div>
+          <div class="card"><img src="images/company -logos/ONE-PLUS.webp" alt="OnePlus"></div>
+          <div class="card"><img src="images/company -logos/ORACLE.webp" alt="Oracle"></div>
+          <div class="card"><img src="images/company -logos/SIMENS.webp" alt="Siemens"></div>
+          <div class="card"><img src="images/company -logos/SAINT-GOBAN.webp" alt="Saint-Gobain"></div>
+          <div class="card"><img src="images/company -logos/INDEGENE.webp" alt="Indegene"></div>
+          <div class="card"><img src="images/company -logos/KASEYA.webp" alt="Kaseya"></div>
+          <div class="card"><img src="images/company -logos/public-is-sapient.webp" alt="Publicis Sapient"></div>
+          <div class="card"><img src="images/company -logos/SAP.webp" alt="SAP"></div>
+          <div class="card"><img src="images/company -logos/TIMES.webp" alt="The Times Group"></div>
+          <div class="card"><img src="images/company -logos/TATA.webp" alt="Tata Power"></div>
+          <div class="card"><img src="images/company -logos/TARGET.webp" alt="Target"></div>
+          <div class="card"><img src="images/company -logos/TAYOTA.webp" alt="Toyota"></div>
+          <div class="card"><img src="images/company -logos/ADANI.webp" alt="Adani"></div>
+          <div class="card"><img src="images/company -logos/TCS.webp" alt="TCS"></div>
+        </div>
+</div>
+</div>
+<div class="shaping-leaders">
+    <div class="shaping-leaders-heading">
+    <h1 style="font-size: 50px;"><b>MBA at Alliance: Shaping <br>Visionary Leaders</b> </h1>
+    </div>
+</div> 
+
+<div class="mba-block-overlay" style="display: flex; justify-content: center; align-items: center; padding: 50px">
+    <div class="mba-block-overlay-container" style="justify-content: center;">
+        <div class="row" style="justify-content: center; align-items: center;">
+            <div class="col-md-4" id="mba-block-overlay-col" style="padding:40px;">
+                <div class="mba-container-card">
+                    <div class="icon">
+                        <img src="images/Screenshot 2025-01-16 161338.png">
+                    </div>
+                    <div class="title">Merit-Based Scholarships</div>
+                    <div class="description">Up to 50% off for top scores on GMAT, CAT, NMAT, and XAT.</div>
+                </div>
+            </div>
+            <div class="col-md-4" id="mba-block-overlay-col" style="padding:40px;">
+                <div class="mba-container-card">
+                    <div class="icon">
+                        <img src="images/Screenshot 2025-01-16 161357.png">
+                    </div>
+                    <div class="title">Tailored Learning Tracks</div>
+                    <div class="description">Specialize in disciplines aligned with your career goals.</div>
+                </div>
+            </div>
+            <div class="col-md-4" id="mba-block-overlay-col" style="padding:40px;">
+                <div class="mba-container-card">
+                    <div class="icon">
+                        <img src="images/Screenshot 2025-01-16 161410.png">
+                    </div>
+                    <div class="title">Global Faculty Expertise</div>
+                    <div class="description">Learn from professors with rich international experience.</div>
+                </div>
+            </div>
+            <div class="col-md-4" id="mba-block-overlay-col" style="padding:40px;">
+                <div class="mba-container-card">
+                    <div class="icon">
+                        <img src="images/Screenshot 2025-01-16 161423.png">
+                    </div>
+                    <div class="title">Elite Corporate Mentorship</div>
+                    <div class="description">Guidance from 80+ top industry leaders.</div>
+                </div>
+            </div>
+            <div class="col-md-4" id="mba-block-overlay-col" style="padding:40px;">
+                <div class="mba-container-card">
+                    <div class="icon">
+                        <img src="images/Screenshot 2025-01-16 161435.png">
+                    </div>
+                    <div class="title">International Partnerships</div>
+                    <div class="description">Study abroad with 80+ reputed global institutions.</div>
+                </div>
+            </div>
+            <div class="col-md-4" id="mba-block-overlay-col" style="padding:40px;">
+                <div class="mba-container-card">
+                    <div class="icon">
+                        <img src="images/Screenshot 2025-01-16 161447.png">
+                    </div>
+                    <div class="title">Top-Tier Career Support</div>
+                    <div class="description">Opportunities with 800+ leading organizations.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="mba-cards-section">
+    <h1 class="text-center mb-4"><b>MASTER BUSINESS THROUGH PRACTICE</b></h1>
+    <div class="row g-4 justify-content-center">
+        <div class="col-md-4" id="mba-block-overlay-col" style="padding:40px;">
+            <div class="custom-card">
+                <div class="side" style="display:flex; gap:2px;">
+                    <img src="images/speech-icon.png" alt="Engaging Lectures" style="margin:4px;">
+                    <div class="text-mba" style="padding:10px;">
+                        <h5>Engaging Lectures</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4" id="mba-block-overlay-col" style="padding:40px;">
+            <div class="custom-card">
+                <div class="side" style="display:flex; gap:2px;">
+                    <img src="images/search-doc-icon.png" alt="In-Depth Case Studies" style="margin:4px;">
+                    <div class="text-mba" style="padding:10px;">
+                        <h5>In-Depth Case Studies</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4" id="mba-block-overlay-col" style="padding:40px;">
+            <div class="custom-card">
+                <div class="side" style="display:flex; gap:2px;">
+                    <img src="images/class-icon.png" alt="Collaborative Classroom Projects" style="margin:4px;">
+                    <div class="text-mba" style="padding:10px;">
+                        <h5>Collaborative Classroom Projects</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row g-4 justify-content-center">
+        <div class="col-md-4" id="mba-block-overlay-col" style="padding:40px;">
+            <div class="custom-card">
+                <div class="side" style="display:flex; gap:2px;">
+                    <img src="images/globe-icon.png" alt="Realistic Simulations" style="margin:4px;">
+                    <div class="text-mba" style="padding:10px;">
+                        <h5>Realistic Simulations</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4" id="mba-block-overlay-col" style="padding:40px;">
+            <div class="custom-card">
+                <div class="side" style="display:flex; gap:2px;">
+                    <img src="images/clock-icon.png" alt="Insightful Group Presentations" style="margin:4px;">
+                    <div class="text-mba" style="padding:10px;">
+                        <h5>Insightful Group Presentations</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4" id="mba-block-overlay-col" style="padding:40px;">
+            <div class="custom-card">
+                <div class="side" style="display:flex; gap:2px;">
+                    <img src="images/all-best-icon.png" alt="Critical Article Reviews" style="margin:4px;">
+                    <div class="text-mba" style="padding:10px;">
+                        <h5>Critical Article Reviews</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        
+        <div class="row g-4 justify-content-center">
+        <div class="col-md-4" id="mba-block-overlay-col" style="padding:40px;">
+            <div class="custom-card">
+                <div class="side" style="display:flex; gap:2px;">
+                    <img src="images/people-icon.png" alt="Practical Field Assignments" style="margin:4px;">
+                    <div class="text-mba" style="padding:10px;">
+                        <h5>Practical Field Assignments</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4" id="mba-block-overlay-col" style="padding:40px;">
+            <div class="custom-card">
+                <div class="side" style="display:flex; gap:2px;">
+                    <img src="images/right-people-icon.png" alt="Guest Expert Sessions" style="margin:4px;">
+                    <div class="text-mba" style="padding:10px;">
+                        <h5>Guest Expert Sessions</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4" id="mba-block-overlay-col" style="padding:40px;">
+            <div class="custom-card">
+                <div class="side" style="display:flex; gap:2px;">
+                    <img src="images/test-tube-icon.png" alt="Immersive Activity Labs" style="margin:4px;">
+                    <div class="text-mba" style="padding:10px;">
+                        <h5>Immersive Activity Labs</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--LERAN FROM THE BEST SECTION-->
+<div class="Learn-from-best">
+        <div class="Lfb-text">
+        <h1><b>Learn from the Best</b></h1>
+        <p>At Alliance, our faculity isn't aboout teaching-they're mentors, innovators and industry's leaders.The diverse group of global scholars <br>combines academic brilliance with real-world epertise to deliver an unparlleled learning eperience.</p>
+        </div>
+        <div class="row" id="Lfb-row" style="padding-left:100px;">
+        <div class="col-md-4" style="margin-right:0px;">
+        <div class="Lfb-image-container">
+            <img src="images/Anirudh-Sridhar.png" alt="MBA 1">
+            <div class="Lfb-image-container-text">
+                <p id="Lfb-para"><b>University of Oxford</b></p>
+                <h4><b>Dr.Anirudh Sridhar</b></h2>
+                <p>D.Phil. In English</p>
+            </div> 
+        </div>
+        </div>  
+        <div class="col-md-4" style="margin-right:0px;">
+            <div class="Lfb-image-container">
+            <img src="images/pravin-Rameshwar-ji-Bhansali.png" alt="MBA 2">
+            <div class="Lfb-image-container-text">
+                <p id="Lfb-para"><b>Jhons Hopkins University, USA</b></p>
+                <h4><b>Dr. Pravin Rameshwarji Bhansali</b></h2>
+                <p>Post Doc. In Chemistry</p>
+            </div>        
+        </div>
+    </div>
+        <div class="col-md-4 "style="margin-right:0px;">
+            <div class="Lfb-image-container">
+            <img src="images/Anupam-Tyagi.png" alt="MBA 3">
+            <div class="Lfb-image-container-text">
+                <p id="Lfb-para"><b>University of Utha, USA</b></p>
+                <h4><b>Dr. Anupam Tyagi</b></h2>
+                <p >Ph.D. In Economics</p>
+                </div>
+        </div>
+           
+        </div>
+        </div>
+</div>
+
+
+</style>
+<div class="stories" style="display: flex; justify-content: center; align-items: center; flex-direction: column ; margin: 50px;">
+    <h1 style="font-size: 50px;"><b>Stories That Inspire</b></h1>
+    <div class="stories-that-inspire-container" style="justify-content: center;">
+        <div class="sliding cards">
+            <div id="quote" style="font-size: 9em; color:#f1f1f1; position: absolute; top: 10px; right: 10px;">"</div>
+            <div style="margin-top: 100px; padding-left: 100px;">
+                <p>MBA 2024</p>
+                <h3>Ms. Soumya Reddy</h3>
+                <p>Placed at Standard Chartered Bank</p>
+                   <p> "Reflecting on my start at Standard Chartered Bank, I can't help but think of a project at Alliance University that <br>changed everything for me. Working with a local startup, we didn't just analyze data; we rolled up our sleeves and <br>tackled their real challenges. It was an experience that taught me how to approach problems creatively. My corporate <br>mentor shared insights that made me rethink my approach to work, emphasizing the importance of adaptability. The<br> friendships I formed during late-night study sessions became a source of support that I still rely on today. For anyone <br>considering an MBA, Alliance is where you learn to make an impact."
+                </p>
+            </div>
+        </div>
+        <div class="sliding cards">
+            <div id="quote" style="font-size: 9em; color:#f1f1f1; position: absolute; top: 10px; right: 10px;">"</div>
+            <div style="margin-top: 100px; padding-left: 100px;">
+                <p>MBA 2024</p>
+                <h3>Mr. John Doe</h3>
+                <p>Placed at Google
+                    "My journey at Alliance University was transformative. The hands-on projects and real-world challenges prepared me for my role at Google. The mentorship and support from faculty and peers were invaluable. Alliance University is where you learn to innovate and lead. The project was
+                    a great opportunity to learn from industry leaders and to apply what I learned in my role at Google. The experience was invaluable and helped me grow as a professional. The project was 
+                    a great opportunity to learn from industry leaders and to apply what I learned in my role at Google. The experience was invaluable and helped me grow as a professional."
+                </p>
+            </div>
+        </div>
+        <div class="sliding cards">
+            <div id="quote" style="font-size: 9em; color:#f1f1f1; position: absolute; top: 10px; right: 10px;">"</div>
+            <div style="margin-top: 100px; padding-left: 100px;">
+                <p>MBA 2024</p>
+                <h3>Ms. Jane Smith</h3>
+                <p>Placed at Microsoft
+                    "Alliance University provided me with the skills and confidence to excel at Microsoft. The collaborative environment and practical learning experiences were key to my success. I highly recommend Alliance University for anyone looking to make a significant impact in their career. The faculty members are highly knowledgeable and always willing to help. The curriculum is designed to be industry-relevant, ensuring that students are well-prepared for the challenges of the professional world. The university also offers numerous opportunities for internships and networking, which are invaluable for career growth. Overall, my experience at Alliance University was transformative and instrumental in shaping my career path."
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="dots-container" style="text-align: center; margin-top: 20px;">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+</div>
+
+<style>
+    .stories-that-inspire-container {
+        background-color: #751613;
+        margin: 10px;
+        width: 1000px;
+        height: 500px;
+        position: relative;
+        overflow: hidden;
+        color:#F1F1F1;
+        padding-right:50px;
+    }
+    .sliding.cards {
+        padding-top: 3em;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        transition: transform 1s ease;
+        text-align: left;
+        
+    }
+    .dots-container {
+        text-align: center;
+        margin-top: 20px;
+    }
+    .dot {
+        height: 15px;
+        width: 15px;
+        margin: 0 5px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+    }
+    .active {
+        background-color: #717171;
+    }
+</style>
+
+<script>
+    $(document).ready(function() {
+        let currentIndex = 0;
+        const slides = $('.sliding.cards');
+        const dots = $('.dot');
+
+        function showSlide(index) {
+            slides.each(function(i) {
+                $(this).css('transform', `translateX(${(i - index) * 100}%)`);
+            });
+            dots.removeClass('active');
+            dots.eq(index).addClass('active');
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % slides.length;
+            showSlide(currentIndex);
+        }
+
+        dots.each(function(index) {
+            $(this).click(function() {
+                currentIndex = index;
+                showSlide(currentIndex);
+            });
+        });
+
+        showSlide(currentIndex);
+        setInterval(nextSlide, 3000);
+    });
+</script>
+<div class="achivers-section">
+    <h1 style="color:black;font-size:50px;"><b>Hear It From Our Achivers</b></h1>
+    <p>Clarity gives you the blocks & components you need to create a truly professional website, <br>landing page or admin panel for your SaaS</p>
+    <div class="row justify-content-center" id="achivers-row">
+        <div class="col-md-4" id="achivers-col">
+           <div class="vedio-img-cotainer"> <img src="images/muskan-pandey.jpg" alt="Muskan Pandey"></div>
+            <div class="image-text">Muskan Pandey <br> MBA(2023-2025)</div>
+            <div class="play-button" onclick="togglePlayPause(this)"><img src="images/play.png" class="play-icon"></div>
+            <div class="play-button" onclick="togglePlayPause(this)" style="display: none;"><img src="images/pause.png" class="pause-icon"></div>
+        </div>
+        <div class="col-md-4" id="achivers-col">
+            <div class="vedio-img-cotainer"> <img src="images/vishali.jpg" alt="Vishali"></div>
+            <div class="image-text">Vishali <br> MBA(2023-2024)</div>
+            <div class="play-button" onclick="togglePlayPause(this)"><img src="images/play.png" class="play-icon"></div>
+            <div class="play-button" onclick="togglePlayPause(this)" style="display: none;"><img src="images/pause.png" class="pause-icon"></div>
+        </div>
+        <div class="col-md-4" id="achivers-col">
+
+            <div class="vedio-img-cotainer"><img src="images/Sowmya-Reddy.jpg" alt="Rohit"></div>
+            <div class="image-text">Sowmya Reddy <br> MBA(2022-2024)</div>
+            <div class="play-button" onclick="togglePlayPause(this)"><img src="images/play.png" class="play-icon"></div>
+            <div class="play-button" onclick="togglePlayPause(this)" style="display: none;"><img src="images/pause.png" class="pause-icon"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+function togglePlayPause(element) {
+    const playButton = element.parentElement.querySelector('.play-button .play-icon').parentElement;
+    const pauseButton = element.parentElement.querySelector('.play-button .pause-icon').parentElement;
+
+    if (playButton.style.display === 'none') {
+        playButton.style.display = 'block';
+        pauseButton.style.display = 'none';
+    } else {
+        playButton.style.display = 'none';
+        pauseButton.style.display = 'block';
+    }
+}
+</script>
+
+
+<style>
+    .vedio-img-cotainer img{
+        width:290px;
+        height :500px;
+
+    }
+    .achivers-section{
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+    }
+    #achivers-col{
+        position: relative;
+  text-align: center;
+  color:#f1f1f1;
+  width: 300px;
+  margin:30px;
+  
+    }
+   
+    .image-text{
+        position: absolute;
+        bottom :30px;
+        left: 41px;
+
+    }
+    .play-button{
+        position: absolute;
+        bottom: 30px;
+        right: 49px;
+        height:45;
+        color:black;
+        width:43px;
+        /* border:1px solid white; */
+        padding:3px;
+    }
+    .play-button img{
+        border:#f1f1f1 1px solid;
+        width:50px;
+        border-radius:2px;
+    }
+    #play{
+        border: 1px solid white;
+    }
+</style>
+<footer>
+    <div class="footer-content">
+      <img src="images/alliance-univesity-logo.png" alt="Alliance University Logo" class="footer-logo">
+      <div class="footer-info">
+        <p><h6>Chandapura - Anekal Main Road, Bengaluru – 562 106, Karnataka, India.</h6></p>
+        <div style="color:grey;">
+        <p>Alliance University © 2026 | <a href="#">Privacy policy</a> | <a href="#">Terms and conditions</a></p>
+      </div>
+      </div>
+    
+    </div>
+  </footer>
+  
+
+
+
+    <script src="script.js"></script>
+</body>
+</html> 
